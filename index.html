@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop up boxes in HTML</title>
+</head>
+<body>
+    <h1 align="center">Pop up boxes in HTML</h1>
+    <br>
+
+    <!-- Alert Box -->
+    <div style="border-radius: 5px; border-style: groove; margin: 5px; padding: 8px;">
+        Click the below button to display an alert box.<br>
+        <button id="alertBox" onclick="alertFunction()">Click me</button>
+    </div>
+
+    <!-- Confirm Box -->
+    <div style="border-radius: 5px; border-style: groove; margin: 5px; padding: 8px;">
+        Click the below button to display a confirm box.<br>
+        <button id="confirmBox" onclick="confirmFunction()">Click me</button>
+    </div>
+
+    <!-- Prompt Box -->
+    <div style="border-radius: 5px; border-style: groove; margin: 5px; padding: 8px;">
+        Click the below button to display a prompt box.<br>
+        <button id="promptBox" onclick="promptFunction()">Click me</button>
+    </div>
+
+    <!-- Output Box -->
+    <div style="border-radius: 5px; border-style: groove; margin: 5px; padding: 8px;">
+        <b>Popup box output</b>
+        <br>
+        <div id="output">
+        </div>
+    </div>
+
+    <script>
+        function alertFunction() {
+            alert("This is an alert box!");
+                document.getElementById("output").innerHTML = "You clicked OK!";
+            
+        }
+
+        function confirmFunction() {
+            var result = confirm("Press OK or Cancel");
+            if (result) {
+                document.getElementById("output").innerHTML = "You clicked OK!";
+            } else {
+                document.getElementById("output").innerHTML = "You clicked Cancel!";
+            }
+        }
+
+        function promptFunction() {
+            var userInput = prompt("Please enter your name:");
+            if (userInput) {
+                document.getElementById("output").innerHTML = "Hello, " + userInput + "!";
+            } else {
+                document.getElementById("output").innerHTML = "You did not enter anything!";
+            }
+        }
+    </script>
+</body>
+</html>
